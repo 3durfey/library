@@ -16,6 +16,9 @@ function addBookToArray() {
   let author = document.getElementById("author").value;
   let title = document.getElementById("title").value;
   let numPages = document.getElementById("numPages").value;
+  if (author === "" || title === "" || numPages === "") {
+    return;
+  }
   let book = new Book(title, author, false, numPages);
   arrayOfBooks.push(book);
   //create book in DOM
