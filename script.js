@@ -1,13 +1,15 @@
 let arrayOfBooks = [];
 
-function Book(title, author, read, pages) {
-  this.title = title;
-  this.author = author;
-  this.read = read;
-  this.pages = pages;
-  this.info = function () {
-    return title + ", " + author + ", " + read + ", " + pages;
-  };
+class Book {
+  constructor(title, author, read, pages) {
+    this.title = title;
+    this.author = author;
+    this.read = read;
+    this.pages = pages;
+    this.info = function () {
+      return title + ", " + author + ", " + read + ", " + pages;
+    };
+  }
 }
 
 //add book to array
@@ -21,6 +23,7 @@ function addBookToArray() {
   }
   let book = new Book(title, author, false, numPages);
   arrayOfBooks.push(book);
+  console.log(arrayOfBooks);
   //create book in DOM
   let library = document.getElementById("libraryContainer");
   const bookDiv = document.createElement("div");
